@@ -2,11 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi primera página en GitHub Pages</title>
+    <title>Web Protegida</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; }
+    </style>
 </head>
 <body>
-    <h1>¡Hola mundo!</h1>
-    <p>Si estás leyendo esto, significa que mi página en GitHub Pages funciona.</p>
+    <h1 id="mensaje"></h1>
+
+    <script>
+        const claveCorrecta = "264820187462912";
+        let claveUsuario = prompt("Introduce la clave secreta:");
+
+        if (claveUsuario === claveCorrecta) {
+            document.getElementById("mensaje").innerHTML = "✅ Bienvenido a la web secreta";
+        } else {
+            document.getElementById("mensaje").innerHTML = "⛔ Clave incorrecta. Acceso denegado.";
+        }
+    </script>
 </body>
 </html>
