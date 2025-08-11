@@ -2,22 +2,43 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Web Protegida</title>
+    <title>Poema del Enrejado</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; }
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin-top: 100px; 
+            background-color: #f9f9f9;
+        }
+        .poema {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            font-size: 1.2em;
+        }
     </style>
 </head>
 <body>
-    <h1 id="mensaje"></h1>
+    <div id="contenido"></div>
 
     <script>
-        const claveCorrecta = "264820187462912";
+        const claveCorrecta = "264820187462912" ;
         let claveUsuario = prompt("Introduce la clave secreta:");
 
         if (claveUsuario === claveCorrecta) {
-            document.getElementById("mensaje").innerHTML = "✅ Bienvenido a la web secreta";
+            document.getElementById("contenido").innerHTML = `
+                <div class="poema">
+                    <h2>🌿 Poema del Enrejado 🌿</h2>
+                    <p>El enrejado no estropeará nada, solo quiero probar esta idea encantada; 
+                    tomates y pimientos decorarán, y cualquier hortaliza que podáis imaginar. 
+                    Si no os gusta, para no molestar, lo quitaré sin rechistar.</p>
+                </div>
+            `;
         } else {
-            document.getElementById("mensaje").innerHTML = "⛔ Clave incorrecta. Acceso denegado.";
+            document.getElementById("contenido").innerHTML = "<h1>⛔ Clave incorrecta. Acceso denegado.</h1>";
         }
     </script>
 </body>
